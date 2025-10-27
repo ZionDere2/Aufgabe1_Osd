@@ -36,7 +36,8 @@ int simple_assignment(int a, int b) {
     die Codezeile `result = a + b;` zwischen diesen beiden Kommentaren einfügen, speichern, und dann weiterlesen.
     */
     /* BEGIN CHANGES */
-    result = a * b;
+    int product = a * b;
+    result = product;
     /* END CHANGES */
     /*
     Die Codezeile, die Sie eingefügt haben, weist der Variable `result` die Summe der beiden Variablen `a` und `b` zu.
@@ -79,8 +80,9 @@ int nested_expressions(int x, int y) {
     selbstdefinierten Variable ab. Probieren Sie gerne beides.
     */
     /* BEGIN CHANGES */
-    int diff = x - y;
-    result = diff * diff;
+    int difference = x - y;
+    int squared_difference = difference * difference;
+    result = squared_difference;
     /* END CHANGES */
     return result;
 }
@@ -94,10 +96,10 @@ int rotation(int a, int b, int c) {
     die Belegung `a = 3, b = 7, c = 0` sein.
     */
     /* BEGIN CHANGES */
-    int original_a = a;
+    int temp = a;
     a = b;
     b = c;
-    c = original_a;
+    c = temp;
     /* END CHANGES */
     return a + (b * 256) + (c * 256 * 256); /* Ja, diese Zeile mag überraschend sein. Einfach ignorieren :-) */
 }
@@ -111,10 +113,10 @@ int while_loop(int n) {
     `n` ist nie kleiner als `1`.
     */
     /* BEGIN CHANGES */
-    int i = 1;
-    while (i <= n) {
-        result *= i;
-        i++;
+    int counter = 1;
+    while (counter <= n) {
+        result = result * counter;
+        counter = counter + 1;
     }
     /* END CHANGES */
     return result;
@@ -129,8 +131,8 @@ int for_loop(int n) {
     `n` ist nie kleiner als `1`.
     */
     /* BEGIN CHANGES */
-    for (int i = 1; i <= n; i++) {
-        result *= i;
+    for (int counter = 1; counter <= n; counter = counter + 1) {
+        result = result * counter;
     }
     /* END CHANGES */
     return result;
@@ -146,7 +148,8 @@ int ones_place(int n) {
     Tipp: der `%` Operator sollte vermutlich in der Lösung auftauchen.
     */
     /* BEGIN CHANGES */
-    result = n % 10;
+    int remainder = n % 10;
+    result = remainder;
     /* END CHANGES */
     return result;
 }
@@ -161,7 +164,9 @@ int tens_place(int n) {
     Tipp: der `/` Operator sollte vermutlich in der Lösung auftauchen.
     */
     /* BEGIN CHANGES */
-    result = (n / 10) % 10;
+    int without_ones = n / 10;
+    int tens_digit = without_ones % 10;
+    result = tens_digit;
     /* END CHANGES */
     return result;
 }
