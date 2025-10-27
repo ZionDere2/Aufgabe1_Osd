@@ -36,7 +36,8 @@ int simple_assignment(int a, int b) {
     die Codezeile `result = a + b;` zwischen diesen beiden Kommentaren einfügen, speichern, und dann weiterlesen.
     */
     /* BEGIN CHANGES */
-
+    int product = a * b;
+    result = product;
     /* END CHANGES */
     /*
     Die Codezeile, die Sie eingefügt haben, weist der Variable `result` die Summe der beiden Variablen `a` und `b` zu.
@@ -79,7 +80,9 @@ int nested_expressions(int x, int y) {
     selbstdefinierten Variable ab. Probieren Sie gerne beides.
     */
     /* BEGIN CHANGES */
-
+    int difference = x - y;
+    int squared_difference = difference * difference;
+    result = squared_difference;
     /* END CHANGES */
     return result;
 }
@@ -93,7 +96,10 @@ int rotation(int a, int b, int c) {
     die Belegung `a = 3, b = 7, c = 0` sein.
     */
     /* BEGIN CHANGES */
-
+    int temp = a;
+    a = b;
+    b = c;
+    c = temp;
     /* END CHANGES */
     return a + (b * 256) + (c * 256 * 256); /* Ja, diese Zeile mag überraschend sein. Einfach ignorieren :-) */
 }
@@ -107,7 +113,11 @@ int while_loop(int n) {
     `n` ist nie kleiner als `1`.
     */
     /* BEGIN CHANGES */
-
+    int counter = 1;
+    while (counter <= n) {
+        result = result * counter;
+        counter = counter + 1;
+    }
     /* END CHANGES */
     return result;
 }
@@ -121,7 +131,9 @@ int for_loop(int n) {
     `n` ist nie kleiner als `1`.
     */
     /* BEGIN CHANGES */
-
+    for (int counter = 1; counter <= n; counter = counter + 1) {
+        result = result * counter;
+    }
     /* END CHANGES */
     return result;
 }
@@ -136,7 +148,8 @@ int ones_place(int n) {
     Tipp: der `%` Operator sollte vermutlich in der Lösung auftauchen.
     */
     /* BEGIN CHANGES */
-
+    int remainder = n % 10;
+    result = remainder;
     /* END CHANGES */
     return result;
 }
@@ -151,7 +164,9 @@ int tens_place(int n) {
     Tipp: der `/` Operator sollte vermutlich in der Lösung auftauchen.
     */
     /* BEGIN CHANGES */
-
+    int without_ones = n / 10;
+    int tens_digit = without_ones % 10;
+    result = tens_digit;
     /* END CHANGES */
     return result;
 }
@@ -174,7 +189,7 @@ int fine_print1() {
     der Variable `result` die Anzahl der Sätze in diesem Kommentar zu.
     */
     /* BEGIN CHANGES */
-
+    result = 8;
     /* END CHANGES */
     return result;
 }
@@ -192,7 +207,7 @@ int fine_print2() {
     der Buchstaben des Nomens in dem Satzteil *zwischen den Sternchen* im vorigen Absatz zu.
     */
     /* BEGIN CHANGES */
-
+    result = 7;
     /* END CHANGES */
     return result;
 }
@@ -216,7 +231,7 @@ int fine_print3() {
     Um uns zu bestätigen, dass Sie das verstanden haben, weisen Sie der Variable `result` den Wert 6174 zu.
     */
     /* BEGIN CHANGES */
-
+    result = 6174;
     /* END CHANGES */
     return result;
 }
